@@ -10,7 +10,6 @@ app.use(express.json());
 const statusToColumnId = { todo: 1, in_progress: 2, done: 3 };
 const columnIdToStatus = { 1: "todo", 2: "in_progress", 3: "done" };
 
-// GET /api/board (Includes due_date)
 app.get("/api/board", (req, res) => {
   const query = `
     SELECT c.id as column_id, c.name as column_name, 
@@ -48,7 +47,6 @@ app.get("/api/board", (req, res) => {
   });
 });
 
-// GET /api/tasks
 app.get("/api/tasks", (req, res) => {
   const { search, priority } = req.query;
   let query = "SELECT * FROM tasks WHERE 1=1";
@@ -82,7 +80,6 @@ app.get("/api/tasks", (req, res) => {
   });
 });
 
-// POST /api/tasks (Inserts due_date)
 app.post("/api/tasks", (req, res) => {
   const { title, description, priority, status, column_id, due_date } =
     req.body;
@@ -122,7 +119,6 @@ app.post("/api/tasks", (req, res) => {
   );
 });
 
-// UPDATE / MOVE Handler (Updates due_date)
 const updateTaskHandler = (req, res) => {
   const { id } = req.params;
   const { title, description, priority, status, column_id, due_date } =
@@ -181,7 +177,6 @@ app.patch("/api/tasks/:id", updateTaskHandler);
 app.put("/api/tasks/:id/move", updateTaskHandler);
 app.patch("/api/tasks/:id/move", updateTaskHandler);
 
-// DELETE /api/tasks/:id
 app.delete("/api/tasks/:id", (req, res) => {
   const { id } = req.params;
   db.run("DELETE FROM tasks WHERE id = ?", [id], function (err) {
@@ -192,7 +187,6 @@ app.delete("/api/tasks/:id", (req, res) => {
   });
 });
 
-// GET /api/analytics/tasks-per-column
 app.get("/api/analytics/tasks-per-column", (req, res) => {
   const query = `
     SELECT 
