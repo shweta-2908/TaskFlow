@@ -31,13 +31,25 @@ TaskFlow is a full-stack, lightweight task board application designed to create,
    ```
 
 2. Install dependencies:
+ 
+ ```bash
    cd backend
+ ```
+   
 
-3. Run automated tests to verify database and API integrity:
+4. Run automated tests to verify database and API integrity:
+ ```bash
+
    npm install
 
-4. Start the backend API server:
+ ```
+
+5. Start the backend API server:
+ ```bash
+
    npm start
+
+ ```
    The server runs on http://localhost:5000 by default
 
    ```
@@ -55,10 +67,18 @@ TaskFlow is a full-stack, lightweight task board application designed to create,
    ```
 
 2. Install dependencies:
+   ```bash
+   
    npm install
+   
+   ```
 
-3. Start the React development server:
+4. Start the React development server:
+ ```bash
+
    npm run dev
+
+   ```
    The client app runs on http://localhost:5173
 
    ```
