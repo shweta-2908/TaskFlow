@@ -26,10 +26,6 @@ TaskFlow is a full-stack, lightweight task board application designed to create,
 
 1. Open your terminal and navigate to the backend directory:
 
-   ```bash
-
-   ```
-
 2. Install dependencies:
  
  ```bash
@@ -52,9 +48,7 @@ TaskFlow is a full-stack, lightweight task board application designed to create,
  ```
    The server runs on http://localhost:5000 by default
 
-   ```
-
-   ```
+  
 
 ### 2. Frontend Setup
 
@@ -81,9 +75,7 @@ TaskFlow is a full-stack, lightweight task board application designed to create,
    ```
    The client app runs on http://localhost:5173
 
-   ```
-
-   ```
+   
 
 ### 3. Database Architecture & Queries
 
